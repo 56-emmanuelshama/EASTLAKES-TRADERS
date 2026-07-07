@@ -80,5 +80,17 @@
     form.reset();
   });
  
+  // mining gallery: cursor-based tilt
+  document.querySelectorAll('.gallery-item').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      const rotateX = ((y - r.height / 2) / (r.height / 2)) * -7;
+      const rotateY = ((x - r.width / 2) / (r.width / 2)) * 7;
+      card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+ 
   // footer year
   document.getElementById('year').textContent = new Date().getFullYear();
