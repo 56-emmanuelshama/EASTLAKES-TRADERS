@@ -12,6 +12,7 @@
     --ink:#33393D;
     --ink-soft:#6B6F70;
     --white:#FFFFFF;
+    --steel:#3A4750;
  
     --display:'Big Shoulders Display', Arial, sans-serif;
     --body:'Inter', -apple-system, sans-serif;
@@ -275,3 +276,56 @@
     html{scroll-behavior:auto;}
     .reveal{transition:none; opacity:1; transform:none;}
   }
+  .logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+/* ============ PROPERTY AGENCY ============ */
+.property{background:var(--paper); padding:110px 0 90px;}
+
+.property-gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+
+.property-item{background:var(--charcoal);}
+.property-tag{
+  position:absolute; top:14px; left:14px; z-index:2;
+  font-family:var(--mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
+  padding:5px 10px; background:var(--charcoal); color:var(--white);
+}
+.property-tag.sale{background:var(--rust);}
+.property-tag.rent{background:var(--quarry);}
+.property-price{
+  position:absolute; top:14px; right:14px; z-index:2;
+  font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.5px;
+  padding:6px 10px; background:var(--yellow); color:var(--charcoal);
+}
+.property-item .gallery-overlay h4{margin-bottom:2px;}
+.p-loc{font-family:var(--mono); font-size:11.5px; color:var(--yellow); letter-spacing:0.5px; margin-bottom:8px;}
+.p-meta{display:flex; gap:12px; font-family:var(--mono); font-size:11px; color:rgba(255,255,255,0.8); opacity:0; transition:opacity .3s ease .05s;}
+.gallery-item:hover .p-meta{opacity:1;}
+
+/* ============ TRANSPORT & LOGISTICS ============ */
+.logistics{background:var(--steel); padding:110px 0 90px; color:var(--white);}
+.logistics .eyebrow{color:var(--yellow);}
+.logistics .eyebrow::before{background:var(--yellow);}
+.logistics .sec-head h2{color:var(--white);}
+.logistics .sec-head p{color:#C9D1D6;}
+.logistics .service-card{background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.14);}
+.logistics .service-card:hover{border-color:var(--yellow); box-shadow:0 18px 40px rgba(0,0,0,0.28);}
+.logistics .service-card h3{color:var(--white);}
+.logistics .service-card p{color:#B7C0C5;}
+.logistics .service-card .idx{color:var(--yellow);}
+.logistics .gallery-head h3{color:var(--white);}
+
+.fleet-gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+
+/* shared: allow real <img> photos inside gallery/property/fleet cards */
+.gallery-media img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease;}
+.gallery-item:hover .gallery-media img{transform:scale(1.09);}
+
+@media (max-width:980px){
+  .property-gallery, .fleet-gallery{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:720px){
+  .property-gallery, .fleet-gallery{grid-template-columns:1fr;}
+}
