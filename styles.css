@@ -328,4 +328,23 @@
 }
 @media (max-width:720px){
   .property-gallery, .fleet-gallery{grid-template-columns:1fr;}
+}.project-thumb {
+    position: relative;
+    width: 100%;
+    height: 220px; /* or whatever height you want */
+    overflow: hidden;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
 }
